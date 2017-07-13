@@ -1,0 +1,13 @@
+@font-face{
+	src : url('../../backend/fonts/JF-Flat-regular.ttf');
+	font-family: 'flat';
+}
+
+*{
+	font-family: 'flat', sans-serif;
+    letter-spacing: 0 !important;
+}
+
+input,a,li,h1,h2,h3,h4,h5,h6,strong,div:not(.fa),textarea,button:not(.fa){
+	font-family: 'flat', sans-serif !important;
+}
