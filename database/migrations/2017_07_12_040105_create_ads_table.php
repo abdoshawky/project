@@ -18,7 +18,8 @@ class CreateAdsTable extends Migration
             $table->integer('section_id')->unsigned();
             $table->foreign('section_id')->references('id')->on('sections');
             $table->morphs('account');
-            $table->enum('type', ['sell','rent','service']);
+            $table->integer('type_id')->unsigned();
+            $table->foreign('type_id')->references('id')->on('types');
             $table->integer('city_id')->unsigned();
             $table->foreign('city_id')->references('id')->on('cities');
             $table->string('address')->nullable();

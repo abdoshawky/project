@@ -10,7 +10,7 @@ class DashboardController extends Controller
     	$page = [
                 'title'     => 'Dashboard',
                 'header'    => 'Dashboard',
-                'active'	=> 'settings',
+                'active'	=> '',
                 ];
     	return view('dashboard.index')->with('page',$page);
     }

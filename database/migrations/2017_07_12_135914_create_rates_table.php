@@ -15,14 +15,16 @@ class CreateRatesTable extends Migration
     {
         Schema::create('rates', function (Blueprint $table) {
             $table->increments('id');
-            $table->morphs('account');
-            $table->integer('ad_id')->unsigned();
-            $table->foreign('ad_id')->references('id')->on('ads');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('company_id')->unsigned();
+            $table->foreign('company_id')->references('id')->on('companies');
             $table->boolean('commitment')->default(0);
             $table->boolean('prices')->default(0);
             $table->boolean('quality')->default(0);
-            $table->boolean('accurity')->default(0);
+            $table->boolean('accuracy')->default(0);
             $table->boolean('honesty')->default(0);
+            $table->string('comment');
             $table->softDeletes();
             $table->timestamps();
         });

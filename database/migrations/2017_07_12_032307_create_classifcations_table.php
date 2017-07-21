@@ -13,7 +13,7 @@ class CreateClassifcationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('classification', function (Blueprint $table) {
+        Schema::create('classifications', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->softDeletes();
@@ -28,6 +28,6 @@ class CreateClassifcationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('classification');
+        Schema::dropIfExists('classifications');
     }
 }

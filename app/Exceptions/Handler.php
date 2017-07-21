@@ -5,6 +5,7 @@ namespace App\Exceptions;
 use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Request;
 
 class Handler extends ExceptionHandler
 {
@@ -56,8 +57,9 @@ class Handler extends ExceptionHandler
      */
     protected function unauthenticated($request, AuthenticationException $exception)
     {
-        if ($request->expectsJson()) {
-            return response()->json(['error' => 'Unauthenticated.'], 401);
+        if ($request->ajax() || $request->expectsJson() || ($request->acceptsJson() && Request::segment(1) == 'api')) {
+            // return response()->json(['error' => 'Unauthenticated.'], 401);
+            return json_response([],111);
         }
 
         return redirect()->guest(route('login'));

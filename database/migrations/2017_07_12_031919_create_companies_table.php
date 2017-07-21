@@ -19,12 +19,12 @@ class CreateCompaniesTable extends Migration
             $table->string('owner_name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->integer('classifcation')->unsigned();
-            $table->foreign('classifcation')->references('id')->on('classifcations');
+            $table->integer('classification_id')->unsigned();
+            $table->foreign('classification_id')->references('id')->on('classifications');
             $table->integer('city_id')->unsigned();
             $table->foreign('city_id')->references('id')->on('cities');
-            $table->string('logo')->default('company_logo.png');
-            $table->string('phone')->unllable();
+            $table->string('logo');
+            $table->string('phone')->nullable();
             $table->boolean('premium')->default(0);
             $table->softDeletes();
             $table->timestamps();

@@ -1,0 +1,12 @@
+.navbar ul a:hover{
+     color: #fdc326;
+     border-right: 2px solid #fdc326;
+}
+
+.testimonials .carousel-feature .carousel-caption{
+    margin-right: -80%;
+}
+
+.testimonials .carousel-feature .carousel-caption .rating{
+    margin-left: -45%;
+}

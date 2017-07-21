@@ -40,10 +40,10 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    // protected function guard()
-    // {
-    //     return Auth::guard('admins');
-    // }
+//     protected function guard()
+//     {
+//         return Auth::guard('admins');
+//     }
 
     protected function attemptLogin(Request $request)
     {
